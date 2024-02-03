@@ -14,6 +14,7 @@ LOCATION=<<YOUR_AZURE_REGION>>
 
 source .env
 
+
 # Login and execute the commands from the AZD CLI
 azd auth login --tenant-id $TENANT_ID
 
@@ -22,5 +23,7 @@ azd env new $ENVIRONMENT_NAME --subscription $SUBSCRIPTION_ID --location $LOCATI
 azd provision
 
 azd deploy
+
+azd pipeline config -e $ENVIRONMENT_NAME --provider github
 
 ```
